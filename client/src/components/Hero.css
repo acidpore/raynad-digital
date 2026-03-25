@@ -1,0 +1,155 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+.hero__video-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Subtle noise / grain texture overlay */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* Right-side abstract office silhouette via box shadow gimmick */
+.hero::after {
+  content: '';
+  position: absolute;
+  right: -80px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 var(--section-padding-h);
+  padding-top: var(--nav-height);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.hero__title {
+  font-size: var(--font-size-h1);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+.hero__subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  max-width: 420px;
+  line-height: 1.7;
+}
+
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+  padding: 14px 32px;
+  border: 1.5px solid rgba(0, 0, 0, 0.7);
+  border-radius: var(--radius-pill);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  color: var(--color-text);
+  background: transparent;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.hero__cta:hover {
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
+  transform: translateY(-2px);
+}
+
+/* Inline Badges */
+.hero__badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+  margin-bottom: 0;
+}
+
+.hero__badge {
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  padding: 8px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: var(--radius-pill);
+  color: var(--color-text-muted);
+  background: transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.hero__badge:hover {
+  color: var(--color-text);
+  border-color: rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .hero__content {
+    padding-top: calc(var(--nav-height) + 20px);
+  }
+  
+  .hero__title {
+    font-size: 2.5rem;
+  }
+  
+  .hero__badges {
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .hero__badge {
+    font-size: 0.75rem;
+    padding: 6px 14px;
+  }
+  
+  .hero::after {
+    display: none;
+  }
+}
