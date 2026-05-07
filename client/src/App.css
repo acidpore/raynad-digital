@@ -1,4 +1,63 @@
-.app {
-  min-height: 100vh;
-  background-color: var(--color-bg);
+/* ── Background — Subtle grid lines on body ── */
+body {
+  background-color: #ffffff;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* ── Global section grid overlay ──
+   Each section gets a CSS grid overlay via ::after
+   so the grid shows on ALL section backgrounds
+   (including colored and dark sections).
+──────────────────────────────────── */
+section {
+  position: relative;
+}
+
+section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Dark sections — white grid lines ── */
+.portfolio::after {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+/* ── Ensure section inner content is above the grid overlay ── */
+.hero__inner,
+.hero__marquee,
+.impact-metrics__inner,
+.about__inner,
+.struggle__inner,
+.services__inner,
+.portfolio__inner,
+.business-model__inner,
+.team__inner,
+.faq__inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Vignette Edge ── */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 60%, rgba(0, 0, 0, 0.025) 100%);
+  pointer-events: none;
+  z-index: 9998;
 }

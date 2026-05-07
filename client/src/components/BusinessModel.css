@@ -1,0 +1,183 @@
+.business-model {
+  background: var(--color-section-light);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding: var(--section-padding-v) var(--section-padding-h);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.business-model__inner {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.business-model__header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 640px;
+}
+
+.business-model__label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.business-model__label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.business-model__title {
+  font-size: var(--font-size-h2);
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: 1.05;
+  text-align: left;
+}
+
+.business-model__subtitle {
+  font-size: 0.9375rem;
+  font-weight: 300;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  max-width: 520px;
+  text-align: left;
+}
+
+/* ── Vertical Timeline ── */
+.business-model__phases {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+/* Vertical line connector */
+.business-model__phases::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0,0,0,0.12) 5%,
+    rgba(0,0,0,0.12) 95%,
+    transparent 100%
+  );
+}
+
+/* Connector divider — hide old horizontal connector */
+.phase-connector {
+  display: none !important;
+}
+
+.phase-card {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  padding: 40px 0 40px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: none;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.phase-card:last-child {
+  border-bottom: none;
+}
+
+.phase-card:hover {
+  background: rgba(0,0,0,0.015);
+  transform: none;
+  box-shadow: none;
+}
+
+/* Phase number dot on the timeline */
+.phase-card__number {
+  position: absolute;
+  left: 0;
+  top: 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(0,0,0,0.15);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.phase-card:hover .phase-card__number {
+  background: var(--color-text);
+  border-color: var(--color-text);
+  color: #fff;
+}
+
+.phase-card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: var(--letter-spacing-snug);
+  line-height: 1.2;
+}
+
+.phase-card__description {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  font-weight: 300;
+  max-width: 640px;
+}
+
+@media (max-width: 768px) {
+  .business-model {
+    min-height: auto;
+  }
+
+  .business-model__phases::before {
+    left: 16px;
+  }
+
+  .phase-card {
+    padding-left: 52px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  .phase-card__number {
+    width: 32px;
+    height: 32px;
+    font-size: 0.65rem;
+    top: 32px;
+  }
+}

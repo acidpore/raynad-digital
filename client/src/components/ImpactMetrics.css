@@ -1,0 +1,170 @@
+.impact-metrics {
+  background: var(--color-section-light);
+  padding: var(--section-padding-v) 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.impact-metrics__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--section-padding-h);
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+
+.impact-metrics__header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 640px;
+}
+
+.impact-metrics__header-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.impact-metrics__header-label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.impact-metrics__title {
+  font-size: var(--font-size-h2);
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: 1.05;
+}
+
+.impact-metrics__description {
+  font-size: 0.9375rem;
+  font-weight: 300;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  max-width: 480px;
+}
+
+/* ── Bare numbers strip — no card, no border-box ── */
+.impact-metrics__strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+.impact-metrics__strip::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(0,0,0,0.08);
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 48px 0;
+  padding-right: 48px;
+  position: relative;
+  transition: none;
+}
+
+.metric-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 48px;
+  bottom: 48px;
+  width: 1px;
+  background: rgba(0,0,0,0.08);
+}
+
+.metric-item:not(:first-child) {
+  padding-left: 48px;
+  padding-right: 0;
+}
+
+.metric-item:not(:first-child):not(:last-child) {
+  padding-right: 48px;
+}
+
+/* Icon hidden — number speaks for itself */
+.metric-item__icon {
+  display: none;
+}
+
+.metric-item__number {
+  font-size: clamp(3.5rem, 6vw, 5rem);
+  font-weight: 800;
+  color: var(--color-text);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: var(--letter-spacing-tight);
+  display: block;
+}
+
+.metric-item__label {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  max-width: 180px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .impact-metrics {
+    padding: 64px 0;
+  }
+
+  .impact-metrics__inner {
+    gap: 48px;
+  }
+
+  .impact-metrics__title {
+    font-size: 1.8rem;
+  }
+
+  .impact-metrics__strip {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-item {
+    padding: 28px 0;
+    padding-right: 0;
+    border-right: none;
+  }
+
+  .metric-item:not(:last-child)::after {
+    top: auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+  }
+
+  .metric-item:not(:first-child) {
+    padding-left: 0;
+  }
+
+  .metric-item__number {
+    font-size: 3rem;
+  }
+}

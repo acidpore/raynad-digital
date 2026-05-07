@@ -1,0 +1,88 @@
+.links-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+  /* Latar belakang transparan agar Grid dan Noise dari App.css global terlihat jelas */
+  background: transparent !important;
+}
+
+.links__inner {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.links__profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.links__logo {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 8px;
+  transform: scale(1.2); /* Memperbesar sedikit agar presisi */
+}
+
+.links__name {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #000000;
+  letter-spacing: -0.02em;
+}
+
+.links__tagline {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0047AB; /* Brand Blue */
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.links__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.links__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px 24px;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1.5px solid #000000;
+  border-radius: 50px; /* Pill shape */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.links__btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 480px) {
+  .links__btn {
+    padding: 14px 20px;
+    font-size: 0.95rem;
+  }
+}
