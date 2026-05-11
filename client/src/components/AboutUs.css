@@ -74,6 +74,10 @@
   line-height: 1.65;
 }
 
+.about__sub-text {
+  color: rgba(0, 0, 0, 0.55);
+}
+
 .about__image-wrap {
   display: flex;
   flex-direction: column;

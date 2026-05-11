@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -13,6 +14,20 @@ import Footer from './components/Footer'
 import ScrollProgress from './components/ScrollProgress'
 
 export default function App() {
+  useEffect(() => {
+    const hash = window.location.hash
+    if (hash) {
+      // Tunggu semua komponen & animasi selesai render
+      const timer = setTimeout(() => {
+        const el = document.querySelector(hash)
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' })
+        }
+      }, 800)
+      return () => clearTimeout(timer)
+    }
+  }, [])
+
   return (
     <div className="app">
       {/* Global premium animations */}

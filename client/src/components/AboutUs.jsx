@@ -51,7 +51,7 @@ export default function AboutUs() {
               <p className="about__lead-text">
                 Raynad Digital is a business transformation partner that believes a company's success is defined by the strength of its internal systems. We don't just implement tools; we architect growth-ready business structures designed for long-term scalability.
               </p>
-              <p>
+              <p className="about__sub-text">
                 Led by founders Nadir Alatas and Rayyan Faris, along with Muhammad Defan, we serve as a dedicated partner focused on making your business scalable, data-driven, and future-ready.
               </p>
             </motion.div>
