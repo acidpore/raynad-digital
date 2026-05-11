@@ -166,6 +166,21 @@
   transform: translateY(-2px);
 }
 
+.hero__btn--wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: transparent;
+  color: #16a34a;
+  border: 1px solid rgba(22, 163, 74, 0.3);
+}
+
+.hero__btn--wa:hover {
+  background: rgba(22, 163, 74, 0.06);
+  border-color: rgba(22, 163, 74, 0.6);
+  transform: translateY(-2px);
+}
+
 /* ── Stats strip ── */
 .hero__stats {
   display: flex;

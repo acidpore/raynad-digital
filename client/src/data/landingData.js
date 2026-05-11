@@ -188,6 +188,7 @@ export const TEAM_MEMBERS = [
 
 export const NAV_LINKS = [
   { label: 'Home', href: '#home' },
+  { label: 'About', href: '#about' },
   { label: 'Service', href: '#service' },
   { label: 'Portfolio', href: '#portfolio' },
   { label: 'Business Model', href: '#business-model' },

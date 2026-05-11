@@ -80,7 +80,7 @@ export default function FeaturedProject() {
             <motion.div key={project.id} variants={itemVariants}>
               <TiltCard className="project-card">
                 {project.image ? (
-                  <img src={project.image} alt={project.title} className="project-card__bg project-card__img" />
+                  <img src={project.image} alt={`${project.title} — project by Raynad Digital`} className="project-card__bg project-card__img" />
                 ) : (
                   <div
                     className="project-card__bg project-card__bg--gradient"
@@ -110,7 +110,15 @@ export default function FeaturedProject() {
 
         <motion.div className="portfolio__footer" variants={itemVariants}>
           <p className="portfolio__footer-text">
-            All systems are custom-built by Raynad Digital and can be tailored to fit your specific business needs. Contact us to schedule a live demo.
+            All systems are custom-built by Raynad Digital and tailored to your business.{' '}
+            <a
+              href="https://wa.me/6281387295387?text=Halo%20Raynad%20Digital%20saya%20tertarik%20untuk%20konsultasi%20mengenai%20sistem%20bisnis"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="portfolio__footer-link"
+            >
+              Contact us to schedule a live demo →
+            </a>
           </p>
         </motion.div>
       </div>

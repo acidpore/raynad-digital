@@ -45,7 +45,7 @@ export default function OurTeam() {
                 return photoSrc ? (
                   <img
                     src={photoSrc}
-                    alt={`Photo of ${member.name}`}
+                    alt={`${member.name} — ${member.role} at Raynad Digital`}
                     className="team-card__photo"
                   />
                 ) : (
