@@ -66,8 +66,9 @@ export default function AboutUs() {
           >
             <img 
               src={getfunImage} 
-              alt="Proyek Getfun by Raynad Digital" 
-              className="about__image-placeholder" 
+              alt="Proyek Getfun — custom digital system by Raynad Digital" 
+              className="about__image-placeholder"
+              loading="lazy"
             />
           </motion.div>
         </div>

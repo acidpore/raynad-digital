@@ -80,7 +80,7 @@ export default function FeaturedProject() {
             <motion.div key={project.id} variants={itemVariants}>
               <TiltCard className="project-card">
                 {project.image ? (
-                  <img src={project.image} alt={`${project.title} — project by Raynad Digital`} className="project-card__bg project-card__img" />
+                  <img src={project.image} alt={`${project.title} — project by Raynad Digital`} className="project-card__bg project-card__img" loading="lazy" />
                 ) : (
                   <div
                     className="project-card__bg project-card__bg--gradient"

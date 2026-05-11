@@ -181,6 +181,23 @@
   transform: translateY(-2px);
 }
 
+.hero__btn--download {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: transparent;
+  color: var(--color-text-muted);
+  border: 1px dashed rgba(0, 0, 0, 0.2);
+  font-size: 0.8rem;
+}
+
+.hero__btn--download:hover {
+  color: var(--color-text);
+  border-color: rgba(0, 0, 0, 0.4);
+  border-style: solid;
+  transform: translateY(-2px);
+}
+
 /* ── Stats strip ── */
 .hero__stats {
   display: flex;

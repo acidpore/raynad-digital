@@ -47,6 +47,7 @@ export default function OurTeam() {
                     src={photoSrc}
                     alt={`${member.name} — ${member.role} at Raynad Digital`}
                     className="team-card__photo"
+                    loading="lazy"
                   />
                 ) : (
                   <div
